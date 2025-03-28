@@ -1,0 +1,51 @@
+<mat-toolbar>
+    <span>Product List</span>
+    <span class="flex-auto"></span>
+    <!-- <button mat-flat-button routerLink="/add-product">Add</button> -->
+    <button mat-icon-button aria-label="Add product" routerLink="/add-product">
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+</mat-toolbar>
+  
+<table mat-table [dataSource]="products()" class="mat-elevation-z8">
+  
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+    
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef> Category </th>
+      <td mat-cell *matCellDef="let element"> {{element.category?.name}}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price | currency:'USD'}}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.createdAt | date:'yyyy/MM/dd, hh:mm a'}}</td>
+    </ng-container>
+    
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element"> 
+        <button mat-icon-button aria-label="Delete product" (click)="onDelete(element.id)">
+            <mat-icon>delete_outline</mat-icon>
+        </button>
+        <button mat-icon-button aria-label="Edit product" routerLink="/update-product" [state]="{ id: element.id }">
+            <mat-icon>edit_outline</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>  

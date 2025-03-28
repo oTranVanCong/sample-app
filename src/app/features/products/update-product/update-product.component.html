@@ -1,0 +1,42 @@
+<h2 class="text-center text-2xl mb-2 p-2">Update product</h2>
+<div class="flex justify-center">
+    <form [formGroup]="formGroup!" (ngSubmit)="onSubmit()" class="w-1/2">
+        <mat-form-field class="w-full mb-2">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name">
+            @if (name?.invalid) {
+                <mat-error>Name is required</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field class="w-full mb-2">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+        <mat-form-field class="w-full mb-2">
+            <mat-label>Price</mat-label>
+            <input type="number" matInput formControlName="price">
+            @if (price?.invalid) {
+                <mat-error>Price is required</mat-error>
+            }
+        </mat-form-field>
+        <mat-form-field class="w-full mb-2">
+            <mat-label>Category</mat-label>
+            <mat-select formControlName="categoryId">
+                @for(category of categories(); track category.id) {
+                    <mat-option [value]="category.id">{{ category.name }}</mat-option>
+                }
+            </mat-select>
+            @if (categoryId?.invalid) {
+                <mat-error>Category is required</mat-error>
+            }
+        </mat-form-field>
+        
+        <div class="flex justify-end">
+            @if(formGroup?.invalid) {
+                <button mat-flat-button disabled>Save</button>
+            } @else {
+                <button mat-flat-button>Save</button>
+            }
+        </div>
+    </form>    
+</div>

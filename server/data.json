@@ -1,0 +1,51 @@
+{
+  "products": [
+    {
+      "id": "1743133731",
+      "name": "Product 1",
+      "description": null,
+      "price": 12,
+      "categoryId": 2,
+      "deleted": false,
+      "createdAt": "2025-03-28T03:48:51.633Z",
+      "updatedAt": "2025-03-28T15:30:13.896Z"
+    },
+    {
+      "id": "1743134154",
+      "name": "Product 2",
+      "description": null,
+      "price": 122,
+      "categoryId": 4,
+      "deleted": false,
+      "createdAt": "2025-03-28T03:55:54.097Z",
+      "updatedAt": "2025-03-28T15:30:04.519Z"
+    },
+    {
+      "id": "1743135362",
+      "name": "Product 3",
+      "description": null,
+      "price": 100,
+      "categoryId": 3,
+      "deleted": false,
+      "createdAt": "2025-03-28T04:16:02.926Z"
+    },
+    {
+      "id": "1743153818",
+      "name": "Product 4",
+      "description": null,
+      "price": 12,
+      "categoryId": 5,
+      "deleted": false,
+      "createdAt": "2025-03-28T09:23:38.989Z"
+    },
+    {
+      "id": 1743179628,
+      "name": "Product 5",
+      "description": null,
+      "price": 123,
+      "categoryId": 3,
+      "deleted": false,
+      "createdAt": "2025-03-28T16:33:48.535Z"
+    }
+  ]
+}
