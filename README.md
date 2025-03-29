@@ -11,7 +11,7 @@ npm run start:server
 
 ## Start application
 
-To start a local development server, run:
+To start a local development server, open another terminal and run:
 
 ```bash
 npm start
@@ -19,9 +19,9 @@ npm start
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`.
 
-## Known JSON mock server issue
+## Known issue
 
-When a product has just been created. We cannot update it. This JSON server's issue is [mentioned here](https://github.com/typicode/json-server/issues/710).
+When a product has just been created. We cannot update it. This JSON mock server's issue is [mentioned here](https://github.com/typicode/json-server/issues/710).
 
  * Workaround: Stop and Restart JSON mock server
 
