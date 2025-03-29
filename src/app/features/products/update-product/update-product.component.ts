@@ -1,4 +1,4 @@
-import { Component, effect, inject, signal, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, signal, Signal } from '@angular/core';
 import { BaseComponent } from '../../../core/components/base.component';
 import { ProductService } from '../shared/product.service';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -21,7 +21,8 @@ import { Category } from '../../categories/shared/category.model';
     ReactiveFormsModule
   ],
   templateUrl: './update-product.component.html',
-  styleUrl: './update-product.component.css'
+  styleUrl: './update-product.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UpdateProductComponent extends BaseComponent {
   private productId!: number;

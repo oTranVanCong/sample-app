@@ -1,4 +1,4 @@
-import { Component, inject, Signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, Signal } from '@angular/core';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -21,7 +21,8 @@ import { CategoryService } from '../../categories/shared/category.service';
     ReactiveFormsModule
   ],
   templateUrl: './add-product.component.html',
-  styleUrl: './add-product.component.css'
+  styleUrl: './add-product.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AddProductComponent extends BaseComponent {
   private productService = inject(ProductService);
